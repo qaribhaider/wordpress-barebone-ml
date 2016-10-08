@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Hug2k16
+ * @package SqhrPortfolio
  */
 get_header();
 ?>
@@ -15,7 +15,7 @@ get_header();
         <?php if (have_posts()) : ?>
 
             <header class="page-header">
-                <h1 class="page-title"><?php printf(esc_html__('Search Results for: %s', 'hug2k16'), '<span>' . get_search_query() . '</span>'); ?></h1>
+                <h1 class="page-title"><?php printf(esc_html__('Search Results for: %s', 'sqhrportfolio'), '<span>' . get_search_query() . '</span>'); ?></h1>
             </header><!-- .page-header -->
 
             <?php

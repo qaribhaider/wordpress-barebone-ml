@@ -6,14 +6,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Hug2k16
+ * @package SqhrPortfolio
  */
 ?>
 
 </div><!-- /.container -->
 
 <footer class="blog-footer">
-    <p><a href="<?php echo esc_url(__('https://wordpress.org/', 'hug2k16')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'hug2k16'), 'WordPress'); ?></a></p>
+    <p><a href="<?php echo esc_url(__('https://wordpress.org/', 'sqhrportfolio')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'sqhrportfolio'), 'WordPress'); ?></a></p>
 </footer>
 
 <?php wp_footer(); ?>

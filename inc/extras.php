@@ -5,7 +5,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Hug2k16
+ * @package SqhrPortfolio
  */
 
 /**
@@ -14,7 +14,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function hug2k16_body_classes($classes) {
+function sqhrportfolio_body_classes($classes) {
     // Adds a class of group-blog to blogs with more than 1 published author.
     if (is_multi_author()) {
         $classes[] = 'group-blog';
@@ -28,4 +28,4 @@ function hug2k16_body_classes($classes) {
     return $classes;
 }
 
-add_filter('body_class', 'hug2k16_body_classes');
+add_filter('body_class', 'sqhrportfolio_body_classes');

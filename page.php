@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Hug2k16
+ * @package SqhrPortfolio
  */
 get_header();
 ?>

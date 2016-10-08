@@ -5,7 +5,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Hug2k16
+ * @package SqhrPortfolio
  */
 
 /**
@@ -14,11 +14,11 @@
  * See: https://jetpack.com/support/infinite-scroll/
  * See: https://jetpack.com/support/responsive-videos/
  */
-function hug2k16_jetpack_setup() {
+function sqhrportfolio_jetpack_setup() {
     // Add theme support for Infinite Scroll.
     add_theme_support('infinite-scroll', array(
         'container' => 'main',
-        'render' => 'hug2k16_infinite_scroll_render',
+        'render' => 'sqhrportfolio_infinite_scroll_render',
         'footer' => 'page',
     ));
 
@@ -26,12 +26,12 @@ function hug2k16_jetpack_setup() {
     add_theme_support('jetpack-responsive-videos');
 }
 
-add_action('after_setup_theme', 'hug2k16_jetpack_setup');
+add_action('after_setup_theme', 'sqhrportfolio_jetpack_setup');
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function hug2k16_infinite_scroll_render() {
+function sqhrportfolio_infinite_scroll_render() {
     while (have_posts()) {
         the_post();
         if (is_search()) :

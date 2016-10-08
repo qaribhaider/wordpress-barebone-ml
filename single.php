@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Hug2k16
+ * @package SqhrPortfolio
  */
 get_header();
 ?>
