@@ -1,5 +1,71 @@
 <?php
 
+/**
+ * Few theme setup adons
+ */
+
+/**
+ * Email customizations
+ */
+function res_fromemail($email) {
+    $sitename = strtolower($_SERVER['SERVER_NAME']);
+    if (substr($sitename, 0, 4) == 'www.') {
+        $sitename = substr($sitename, 4);
+    }
+    /* end of code lifted from wordpress core */
+    $myfront = "admin@";
+    $myfrom = $myfront . $sitename;
+    return $myfrom;
+}
+
+function res_fromname($email) {
+    return get_option('blogname');
+}
+
+add_filter('wp_mail_from', 'res_fromemail');
+add_filter('wp_mail_from_name', 'res_fromname');
+
+/**
+ * Filter to show custom post category archives too
+ * on category archieves listing page
+ */
+add_filter('pre_get_posts', 'query_post_type');
+
+function query_post_type($query) {
+    $args = array(
+        'public' => true,
+        '_builtin' => false
+    );
+    $post_types = get_post_types($args);
+
+    if (is_category() || is_tag()) {
+        $post_type = get_query_var('article');
+
+        if ($post_type) {
+            $post_type = $post_type;
+        } else {
+            $post_type = array_values($post_types);
+        }
+
+        $query->set('post_type', array('attachment', 'revision', 'nav_menu_item', 'media', 'shops'));
+
+        return $query;
+    }
+}
+
+/**
+ * For Permalinks to work after theme switch
+ */
+function my_rewrite_flush() {
+    flush_rewrite_rules();
+}
+
+add_action('after_switch_theme', 'my_rewrite_flush');
+
+/**
+ * Helper functions beign here
+ */
+
 function assets_url() {
     return get_template_directory_uri() . '/assets/';
 }
